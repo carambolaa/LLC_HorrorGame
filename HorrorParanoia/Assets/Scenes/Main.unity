@@ -194,10 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c187a561fd9e0e47a0d800381ec6d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLoaded: 0
-  shouldLoad: 0
+  unloaded: 0
+  loaded: 0
   PrevSceneName: WornHouse_1
-  NextSceneName: 
+  NextSceneName: WornHouse_2
 --- !u!1001 &1931201368
 PrefabInstance:
   m_ObjectHideFlags: 0

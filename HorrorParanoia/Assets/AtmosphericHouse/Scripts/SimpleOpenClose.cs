@@ -45,7 +45,7 @@ public class SimpleOpenClose : MonoBehaviour
 
     // Player clicks object. Method called from SimplePlayerUse script.
 
-    void ObjectClicked()
+    public void ObjectClicked()
     {
 
         myNormalizedTime = myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;

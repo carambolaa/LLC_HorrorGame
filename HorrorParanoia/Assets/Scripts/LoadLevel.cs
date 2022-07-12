@@ -13,24 +13,39 @@ public class LoadLevel : MonoBehaviour
 
     private void Start()
     {
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && !unloaded)
+        if(SceneManager.GetSceneByName(NextSceneName).isLoaded)
         {
-            UnLoadScene();
+            loaded = true;
+        }
+        else
+        {
+            loaded = false;
+        }
+
+        if(SceneManager.GetSceneByName(PrevSceneName).isLoaded)
+        {
+            unloaded = false;
+        }
+        else
+        {
             unloaded = true;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && !loaded)
+        if (other.CompareTag("Player"))
         {
-            LoadScene();
-            loaded = true;
+            if (!unloaded)
+            {
+                UnLoadScene();
+                unloaded = true;
+            }
+            if(!loaded)
+            {
+                LoadScene();
+                loaded = true;
+            }
         }
     }
 
