@@ -29,8 +29,10 @@ public class SimplePlayerUse : MonoBehaviour
             else
                  flashlight.SetActive(true);
         }
+
+
     }
-    
+
     void RaycastCheck()
     {
         RaycastHit hit;
@@ -42,7 +44,6 @@ public class SimplePlayerUse : MonoBehaviour
                // Debug.Log("Object with SimpleOpenClose script found");
                 hit.collider.gameObject.BroadcastMessage("ObjectClicked");
             }
-
             else
             {
                // Debug.Log("Object doesn't have script SimpleOpenClose attached");
@@ -50,6 +51,15 @@ public class SimplePlayerUse : MonoBehaviour
             }
            // Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
            // Debug.Log("Did Hit");
+
+            if(hit.collider.gameObject.GetComponent<AutoDoorControl>())
+            {
+                var reference = transform.GetComponent<SimplePlayerController>();
+                reference.GetCurrentPosition();
+                reference.IsTransitioning();
+                reference.SetDestination(hit.collider.gameObject.GetComponent<AutoDoorControl>().GetDestination());
+                reference.SetCurrentDoor(hit.collider.gameObject);
+            }
         }
         else
         {

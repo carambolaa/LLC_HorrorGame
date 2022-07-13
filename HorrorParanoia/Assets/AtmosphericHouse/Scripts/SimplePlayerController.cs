@@ -12,10 +12,18 @@ public class SimplePlayerController : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 60.0f;
     public float gravity = 150.0f;
+    public Vector3 currentPosition;
+    public Quaternion currentRotation;
+    public bool inTransition;
+    public float time;
+    public Vector3 targetPosition;
+    public Quaternion targetRotation;
+    public Quaternion playerCameraRotation;
+    [SerializeField] public GameObject currentDoor;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
-    float rotationX = 0;
+    public float rotationX = 0;
     private bool canMove = true;
 
     void Start()
@@ -35,21 +43,72 @@ public class SimplePlayerController : MonoBehaviour
         float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+        moveDirection = (forward.normalized * curSpeedX) + (right.normalized * curSpeedY);
 
-        if (!characterController.isGrounded)
+        if(inTransition)
         {
-            moveDirection.y -= gravity * Time.deltaTime;
+            characterController.enabled = false;
+            PassingThroughDoors(currentPosition, targetPosition);
+        }
+        else
+        {
+            characterController.enabled = true;
         }
 
-        characterController.Move(moveDirection * Time.deltaTime);
-
-        if (canMove)
+        if(characterController.enabled)
         {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            if (!characterController.isGrounded)
+            {
+                moveDirection.y -= gravity * Time.deltaTime;
+            }
+
+            characterController.Move(moveDirection * Time.deltaTime);
+
+            if (canMove)
+            {
+                rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+                rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+                playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+                transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            }
         }
+    }
+
+    public void IsTransitioning()
+    {
+        inTransition = true;
+    }
+
+    public void GetCurrentPosition()
+    {
+        currentPosition = transform.position;
+        currentRotation = transform.rotation;
+        playerCameraRotation = playerCamera.transform.localRotation;
+    }
+
+    public void PassingThroughDoors(Vector3 currentPosition, Vector3 targetPosition)
+    {
+        if (time >= 1.2f)
+        {
+            rotationX = 0;
+            inTransition = false;
+            currentDoor.BroadcastMessage("ObjectClicked");
+        }
+        transform.position = Vector3.Lerp(currentPosition, targetPosition, time);
+        playerCamera.transform.localRotation = Quaternion.Lerp(playerCameraRotation, Quaternion.Euler(0,0,0), time);
+        transform.rotation = Quaternion.Lerp(currentRotation, Quaternion.Euler(0, 180, 0), time);
+        time += Time.deltaTime / 1.2f;
+    }
+
+    public void SetCurrentDoor(GameObject GO)
+    {
+        currentDoor = GO;
+    }
+
+    public void SetDestination(Vector3 destination)
+    {
+        time = 0;
+        targetPosition = destination;
+        targetPosition.y = transform.position.y;
     }
 }
