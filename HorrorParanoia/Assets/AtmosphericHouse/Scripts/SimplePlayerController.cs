@@ -43,16 +43,11 @@ public class SimplePlayerController : MonoBehaviour
         Vector3 right = transform.TransformDirection(Vector3.right);
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         //float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
-        float curSpeedX = Input.GetAxis("Vertical");
-        float curSpeedY = Input.GetAxis("Horizontal");
+        float curSpeedX = Input.GetAxisRaw("Vertical");
+        float curSpeedY = Input.GetAxisRaw("Horizontal");
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX + right * curSpeedY);
         moveDirection = moveDirection.normalized;
-
-        if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
-        {
-            characterController.Move(Vector3.zero);
-        }
 
         SetSpeed();
         PlayFootSteps();
@@ -69,6 +64,11 @@ public class SimplePlayerController : MonoBehaviour
 
         if(characterController.enabled)
         {
+            if (Input.GetAxisRaw("Vertical") == 0 && Input.GetAxisRaw("Horizontal") == 0)
+            {
+                characterController.Move(Vector3.zero);
+            }
+
             if (!characterController.isGrounded)
             {
                 moveDirection.y -= gravity * Time.deltaTime;
@@ -135,7 +135,9 @@ public class SimplePlayerController : MonoBehaviour
 
     private void PlayFootSteps()
     {
-        if(characterController.velocity != Vector3.zero && !audioSource.isPlaying)
+        var velocity = characterController.velocity;
+        velocity.y = 0;
+        if(velocity != Vector3.zero && !audioSource.isPlaying)
         {
             audioSource.PlayOneShot(footStep);
         }
