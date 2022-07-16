@@ -25,14 +25,16 @@ public class SimplePlayerController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     public float rotationX = 0;
     private bool canMove = true;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip footStep;
+    private float currentSpeed;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-
+        audioSource = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
     }
 
     void Update()
@@ -40,12 +42,22 @@ public class SimplePlayerController : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
+        //float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
+        float curSpeedX = Input.GetAxis("Vertical");
+        float curSpeedY = Input.GetAxis("Horizontal");
         float movementDirectionY = moveDirection.y;
-        moveDirection = (forward.normalized * curSpeedX) + (right.normalized * curSpeedY);
+        moveDirection = (forward * curSpeedX + right * curSpeedY);
+        moveDirection = moveDirection.normalized;
 
-        if(inTransition)
+        if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
+        {
+            characterController.Move(Vector3.zero);
+        }
+
+        SetSpeed();
+        PlayFootSteps();
+
+        if (inTransition)
         {
             characterController.enabled = false;
             PassingThroughDoors(currentPosition, targetPosition);
@@ -61,8 +73,12 @@ public class SimplePlayerController : MonoBehaviour
             {
                 moveDirection.y -= gravity * Time.deltaTime;
             }
+            else
+            {
+                moveDirection.y = 0;
+            }
 
-            characterController.Move(moveDirection * Time.deltaTime);
+            characterController.Move(moveDirection * currentSpeed * Time.deltaTime);
 
             if (canMove)
             {
@@ -74,6 +90,11 @@ public class SimplePlayerController : MonoBehaviour
         }
     }
 
+    public void SetSpeed()
+    {
+        currentSpeed = canMove ? (Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed) : 0;
+    }
+    
     public void IsTransitioning()
     {
         inTransition = true;
@@ -110,5 +131,17 @@ public class SimplePlayerController : MonoBehaviour
         time = 0;
         targetPosition = destination;
         targetPosition.y = transform.position.y;
+    }
+
+    private void PlayFootSteps()
+    {
+        if(characterController.velocity != Vector3.zero && !audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(footStep);
+        }
+        else if(characterController.velocity == Vector3.zero)
+        {
+            audioSource.Stop();
+        }
     }
 }
