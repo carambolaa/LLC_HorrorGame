@@ -30,8 +30,8 @@ public class DoorLocker : MonoBehaviour
 
     IEnumerator CloseDoorSound()
     {
-        yield return new WaitForSeconds(2f);
-        
+        yield return new WaitForSeconds(1.8f);
+
         audioSource.PlayOneShot(CloseDoor, 0.7f);
     }
 }

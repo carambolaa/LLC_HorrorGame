@@ -28,6 +28,7 @@ public class SimplePlayerController : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] private AudioClip footStep;
     private float currentSpeed;
+    private bool startDelay;
 
     void Start()
     {
@@ -59,6 +60,7 @@ public class SimplePlayerController : MonoBehaviour
         }
         else
         {
+            startDelay = false;
             characterController.enabled = true;
         }
 
@@ -90,14 +92,20 @@ public class SimplePlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator EnablePlayerMovement()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SetTransitState(false);
+    }
+
     public void SetSpeed()
     {
         currentSpeed = canMove ? (Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed) : 0;
     }
     
-    public void IsTransitioning()
+    public void SetTransitState(bool bo)
     {
-        inTransition = true;
+        inTransition = bo;
     }
 
     public void GetCurrentPosition()
@@ -109,16 +117,18 @@ public class SimplePlayerController : MonoBehaviour
 
     public void PassingThroughDoors(Vector3 currentPosition, Vector3 targetPosition)
     {
-        if (time >= 1.2f)
+        if (time >= 1.2f && !startDelay)
         {
             rotationX = 0;
-            inTransition = false;
+            startDelay = true;
+            StartCoroutine(EnablePlayerMovement());
             currentDoor.BroadcastMessage("ObjectClicked");
+            currentDoor.BroadcastMessage("PlaySFX");
         }
         transform.position = Vector3.Lerp(currentPosition, targetPosition, time);
         playerCamera.transform.localRotation = Quaternion.Lerp(playerCameraRotation, Quaternion.Euler(0,0,0), time);
         transform.rotation = Quaternion.Lerp(currentRotation, Quaternion.Euler(0, 180, 0), time);
-        time += Time.deltaTime / 1.2f;
+        time += Time.deltaTime / 2.5f;
     }
 
     public void SetCurrentDoor(GameObject GO)

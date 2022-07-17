@@ -37,7 +37,7 @@ public class SimplePlayerUse : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward), out hit, 2.3f))
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward), out hit, 1f))
         {
             if (hit.collider.gameObject.GetComponent<DoorLocker>())
             {
@@ -50,7 +50,7 @@ public class SimplePlayerUse : MonoBehaviour
                     {
                         var reference = transform.GetComponent<SimplePlayerController>();
                         reference.GetCurrentPosition();
-                        reference.IsTransitioning();
+                        reference.SetTransitState(true);
                         reference.SetDestination(hit.collider.gameObject.GetComponent<AutoDoorControl>().GetDestination());
                         reference.SetCurrentDoor(hit.collider.gameObject);
                     }

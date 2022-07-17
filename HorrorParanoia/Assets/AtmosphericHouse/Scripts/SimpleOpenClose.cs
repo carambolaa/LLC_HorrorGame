@@ -105,4 +105,8 @@ public class SimpleOpenClose : MonoBehaviour
 
     }
 
+    IEnumerator DoorCoolDown()
+    {
+        yield return new WaitForSeconds(1.9f);
+    }
 }
