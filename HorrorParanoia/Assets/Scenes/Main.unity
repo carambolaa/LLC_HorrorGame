@@ -382,6 +382,18 @@ PrefabInstance:
       propertyPath: m_Height
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 7751911247176655116, guid: 6ca8b56c1e92d234eb8a69e1d7dfb99b, type: 3}
+      propertyPath: m_Radius
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751911247176655116, guid: 6ca8b56c1e92d234eb8a69e1d7dfb99b, type: 3}
+      propertyPath: m_SkinWidth
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751911247176655116, guid: 6ca8b56c1e92d234eb8a69e1d7dfb99b, type: 3}
+      propertyPath: m_StepOffset
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7751911247618219921, guid: 6ca8b56c1e92d234eb8a69e1d7dfb99b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6

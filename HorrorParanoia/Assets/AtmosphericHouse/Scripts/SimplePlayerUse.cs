@@ -39,26 +39,31 @@ public class SimplePlayerUse : MonoBehaviour
 
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward), out hit, 2.3f))
         {
-            if (hit.collider.gameObject.GetComponent<SimpleOpenClose>())
+            if (hit.collider.gameObject.GetComponent<DoorLocker>())
             {
-               // Debug.Log("Object with SimpleOpenClose script found");
-                hit.collider.gameObject.BroadcastMessage("ObjectClicked");
+                var go = hit.collider.gameObject;
+                if(go.GetComponent<DoorLocker>().GetCanOpen())
+                {
+                    go.BroadcastMessage("PlaySFX");
+                    go.BroadcastMessage("ObjectClicked");
+                    if (go.GetComponent<AutoDoorControl>())
+                    {
+                        var reference = transform.GetComponent<SimplePlayerController>();
+                        reference.GetCurrentPosition();
+                        reference.IsTransitioning();
+                        reference.SetDestination(hit.collider.gameObject.GetComponent<AutoDoorControl>().GetDestination());
+                        reference.SetCurrentDoor(hit.collider.gameObject);
+                    }
+                }
+                else
+                {
+                    //play lock sound
+                    Debug.Log("doorLocked");
+                }
             }
             else
             {
-               // Debug.Log("Object doesn't have script SimpleOpenClose attached");
 
-            }
-           // Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-           // Debug.Log("Did Hit");
-
-            if(hit.collider.gameObject.GetComponent<AutoDoorControl>())
-            {
-                var reference = transform.GetComponent<SimplePlayerController>();
-                reference.GetCurrentPosition();
-                reference.IsTransitioning();
-                reference.SetDestination(hit.collider.gameObject.GetComponent<AutoDoorControl>().GetDestination());
-                reference.SetCurrentDoor(hit.collider.gameObject);
             }
         }
         else
