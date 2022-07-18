@@ -7,6 +7,9 @@ public class SimplePlayerUse : MonoBehaviour
     public GameObject mainCamera;
     private GameObject objectClicked;
     public GameObject flashlight;
+    public AudioClip flashLightOn;
+    public AudioClip flashLightOff;
+    public AudioSource flashLightAudio;
     public KeyCode OpenClose;
     public KeyCode Flashlight;
 
@@ -25,31 +28,54 @@ public class SimplePlayerUse : MonoBehaviour
         if (Input.GetKeyDown(Flashlight)) // Toggle flashlight
         {
             if (flashlight.activeSelf )
-                  flashlight.SetActive(false);
+            {
+                flashLightAudio.GetComponent<AudioSource>().PlayOneShot(flashLightOff);
+                flashlight.SetActive(false);
+            }
             else
-                 flashlight.SetActive(true);
+            {
+                flashLightAudio.GetComponent<AudioSource>().PlayOneShot(flashLightOn);
+                flashlight.SetActive(true);
+            }
         }
+
+
     }
-    
+
     void RaycastCheck()
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward), out hit, 2.3f))
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward), out hit, 1f))
         {
-            if (hit.collider.gameObject.GetComponent<SimpleOpenClose>())
+            if (hit.collider.gameObject.GetComponent<DoorLocker>())
             {
-               // Debug.Log("Object with SimpleOpenClose script found");
-                hit.collider.gameObject.BroadcastMessage("ObjectClicked");
+                var go = hit.collider.gameObject;
+                if(go.GetComponent<DoorLocker>().GetCanOpen() && !go.GetComponent<DoorLocker>().GetIsLocked())
+                {
+                    go.BroadcastMessage("PlaySFX");
+                    go.BroadcastMessage("ObjectClicked");
+                    if (go.GetComponent<AutoDoorControl>())
+                    {
+                        var reference = transform.GetComponent<SimplePlayerController>();
+                        reference.GetCurrentPosition();
+                        reference.SetTransitState(true);
+                        reference.SetDestination(hit.collider.gameObject.GetComponent<AutoDoorControl>().GetDestination());
+                        reference.SetCurrentDoor(hit.collider.gameObject);
+                        reference.StopAllSounds();
+                    }
+                }
+                else
+                {
+                    //play lock sound
+                    Debug.Log("doorLocked");
+                    go.BroadcastMessage("PlayLockedSound");
+                }
             }
-
             else
             {
-               // Debug.Log("Object doesn't have script SimpleOpenClose attached");
 
             }
-           // Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-           // Debug.Log("Did Hit");
         }
         else
         {

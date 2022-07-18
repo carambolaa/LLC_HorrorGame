@@ -45,7 +45,7 @@ public class SimpleOpenClose : MonoBehaviour
 
     // Player clicks object. Method called from SimplePlayerUse script.
 
-    void ObjectClicked()
+    public void ObjectClicked()
     {
 
         myNormalizedTime = myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
@@ -105,4 +105,8 @@ public class SimpleOpenClose : MonoBehaviour
 
     }
 
+    IEnumerator DoorCoolDown()
+    {
+        yield return new WaitForSeconds(1.9f);
+    }
 }
