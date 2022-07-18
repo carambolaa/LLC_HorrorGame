@@ -156,4 +156,9 @@ public class SimplePlayerController : MonoBehaviour
             audioSource.Stop();
         }
     }
+
+    public void StopAllSounds()
+    {
+        audioSource.Stop();
+    }
 }

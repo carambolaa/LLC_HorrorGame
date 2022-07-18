@@ -7,6 +7,9 @@ public class SimplePlayerUse : MonoBehaviour
     public GameObject mainCamera;
     private GameObject objectClicked;
     public GameObject flashlight;
+    public AudioClip flashLightOn;
+    public AudioClip flashLightOff;
+    public AudioSource flashLightAudio;
     public KeyCode OpenClose;
     public KeyCode Flashlight;
 
@@ -25,9 +28,15 @@ public class SimplePlayerUse : MonoBehaviour
         if (Input.GetKeyDown(Flashlight)) // Toggle flashlight
         {
             if (flashlight.activeSelf )
-                  flashlight.SetActive(false);
+            {
+                flashLightAudio.GetComponent<AudioSource>().PlayOneShot(flashLightOff);
+                flashlight.SetActive(false);
+            }
             else
-                 flashlight.SetActive(true);
+            {
+                flashLightAudio.GetComponent<AudioSource>().PlayOneShot(flashLightOn);
+                flashlight.SetActive(true);
+            }
         }
 
 
@@ -42,7 +51,7 @@ public class SimplePlayerUse : MonoBehaviour
             if (hit.collider.gameObject.GetComponent<DoorLocker>())
             {
                 var go = hit.collider.gameObject;
-                if(go.GetComponent<DoorLocker>().GetCanOpen())
+                if(go.GetComponent<DoorLocker>().GetCanOpen() && !go.GetComponent<DoorLocker>().GetIsLocked())
                 {
                     go.BroadcastMessage("PlaySFX");
                     go.BroadcastMessage("ObjectClicked");
@@ -53,12 +62,14 @@ public class SimplePlayerUse : MonoBehaviour
                         reference.SetTransitState(true);
                         reference.SetDestination(hit.collider.gameObject.GetComponent<AutoDoorControl>().GetDestination());
                         reference.SetCurrentDoor(hit.collider.gameObject);
+                        reference.StopAllSounds();
                     }
                 }
                 else
                 {
                     //play lock sound
                     Debug.Log("doorLocked");
+                    go.BroadcastMessage("PlayLockedSound");
                 }
             }
             else
