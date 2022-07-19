@@ -51,6 +51,10 @@ public class SimplePlayerUse : MonoBehaviour
             if (hit.collider.gameObject.GetComponent<DoorLocker>())
             {
                 var go = hit.collider.gameObject;
+                if(go.GetComponent<TriggerEvents>())
+                {
+                    go.BroadcastMessage("Triggered");
+                }
                 if(go.GetComponent<DoorLocker>().GetCanOpen() && !go.GetComponent<DoorLocker>().GetIsLocked())
                 {
                     go.BroadcastMessage("PlaySFX");
@@ -62,7 +66,6 @@ public class SimplePlayerUse : MonoBehaviour
                         reference.SetTransitState(true);
                         reference.SetDestination(hit.collider.gameObject.GetComponent<AutoDoorControl>().GetDestination());
                         reference.SetCurrentDoor(hit.collider.gameObject);
-                        reference.StopAllSounds();
                     }
                 }
                 else

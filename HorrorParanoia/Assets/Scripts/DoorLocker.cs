@@ -40,6 +40,11 @@ public class DoorLocker : MonoBehaviour
         }
     }
 
+    public void DebugString(string st)
+    {
+        Debug.Log(st);
+    }
+
     public void PlaySFX()
     {
         //Debug.Log(transform.localRotation.y);

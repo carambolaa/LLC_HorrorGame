@@ -147,11 +147,11 @@ public class SimplePlayerController : MonoBehaviour
     {
         var velocity = characterController.velocity;
         velocity.y = 0;
-        if(velocity != Vector3.zero && !audioSource.isPlaying)
+        if(velocity != Vector3.zero && !audioSource.isPlaying && !inTransition)
         {
             audioSource.PlayOneShot(footStep);
         }
-        else if(characterController.velocity == Vector3.zero)
+        else if(characterController.velocity == Vector3.zero || inTransition)
         {
             audioSource.Stop();
         }
