@@ -6,8 +6,8 @@ public class AutoDoorControl : MonoBehaviour
 {
     [SerializeField] private Transform destination;
 
-    public Vector3 GetDestination()
+    public Transform GetDestination()
     {
-        return destination.position;
+        return destination;
     }
 }

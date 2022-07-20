@@ -62,10 +62,10 @@ public class SimplePlayerUse : MonoBehaviour
                     if (go.GetComponent<AutoDoorControl>())
                     {
                         var reference = transform.GetComponent<SimplePlayerController>();
+                        reference.SetCurrentDoor(hit.collider.gameObject);
                         reference.GetCurrentPosition();
                         reference.SetTransitState(true);
                         reference.SetDestination(hit.collider.gameObject.GetComponent<AutoDoorControl>().GetDestination());
-                        reference.SetCurrentDoor(hit.collider.gameObject);
                     }
                 }
                 else

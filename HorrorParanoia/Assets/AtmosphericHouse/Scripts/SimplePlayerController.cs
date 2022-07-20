@@ -127,7 +127,7 @@ public class SimplePlayerController : MonoBehaviour
         }
         transform.position = Vector3.Lerp(currentPosition, targetPosition, time);
         playerCamera.transform.localRotation = Quaternion.Lerp(playerCameraRotation, Quaternion.Euler(0,0,0), time);
-        transform.rotation = Quaternion.Lerp(currentRotation, Quaternion.Euler(0, 180, 0), time);
+        transform.rotation = Quaternion.Lerp(currentRotation,targetRotation, time);
         time += Time.deltaTime / 2.5f;
     }
 
@@ -136,11 +136,12 @@ public class SimplePlayerController : MonoBehaviour
         currentDoor = GO;
     }
 
-    public void SetDestination(Vector3 destination)
+    public void SetDestination(Transform destination)
     {
         time = 0;
-        targetPosition = destination;
+        targetPosition = destination.position;
         targetPosition.y = transform.position.y;
+        targetRotation = destination.rotation;
     }
 
     private void PlayFootSteps()
