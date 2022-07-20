@@ -11,6 +11,15 @@ public class TriggerEvents: MonoBehaviour
     [SerializeField] private Transform Level;
     [SerializeField] private int triggeredTime = 0;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            Triggered();
+        }
+    }
+
+
     public void Triggered()
     {
         if (ReferenceEquals(Level.GetComponent<LevelFlowControl>().GetGameObject(), gameObject))
