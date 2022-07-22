@@ -105,8 +105,11 @@ public class SimpleOpenClose : MonoBehaviour
 
     }
 
-    IEnumerator DoorCoolDown()
+    public void CloseDoor()
     {
-        yield return new WaitForSeconds(1.9f);
+        if(objectOpen)
+        {
+            ObjectClicked();
+        }
     }
 }

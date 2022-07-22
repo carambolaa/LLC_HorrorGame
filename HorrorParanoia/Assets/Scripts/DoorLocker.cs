@@ -27,6 +27,11 @@ public class DoorLocker : MonoBehaviour
         isLocked = bo;
     }
 
+    public void UnlockDoor()
+    {
+        isLocked = false;
+    }
+
     public bool GetIsLocked()
     {
         return isLocked;
@@ -76,5 +81,10 @@ public class DoorLocker : MonoBehaviour
     {
         yield return new WaitForSeconds(1.9f);
         canOpen = true;
+    }
+
+    public void UnlockDoorAfterSecs(float delay)
+    {
+        Invoke("UnlockDoor", delay);
     }
 }

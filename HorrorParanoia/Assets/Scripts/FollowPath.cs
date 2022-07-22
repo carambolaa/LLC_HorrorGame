@@ -50,4 +50,9 @@ public class FollowPath : MonoBehaviour
         started = true;
         transform.GetComponent<AudioSource>().Play();
     }
+
+    public void ActiveObjectAfterSecs(float delay)
+    {
+        Invoke("ActiveObject", delay);
+    }
 }

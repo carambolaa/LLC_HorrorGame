@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -153,8 +153,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.319274, y: 2.7665293, z: 24.53808}
-  m_Center: {x: 1.4801822, y: -0.59946716, z: 14.785604}
+  m_Size: {x: 9.319274, y: 2.7665293, z: 22.854256}
+  m_Center: {x: 1.4801822, y: -0.59946716, z: 15.627516}
 --- !u!65 &264708867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   unloaded: 0
   loaded: 0
   PrevSceneName: Level2
-  NextSceneName: 
+  NextSceneName: Level4
 --- !u!4 &264708869
 Transform:
   m_ObjectHideFlags: 0
@@ -247,8 +247,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.319274, y: 2.7665293, z: 24.53808}
-  m_Center: {x: 1.4801822, y: -0.59946716, z: 14.785604}
+  m_Size: {x: 9.319274, y: 2.7665293, z: 22.405788}
+  m_Center: {x: 1.4801822, y: -0.59946716, z: 15.851749}
 --- !u!65 &774285283
 BoxCollider:
   m_ObjectHideFlags: 0
