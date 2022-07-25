@@ -29,6 +29,8 @@ public class SimplePlayerController : MonoBehaviour
     [SerializeField] private AudioClip footStep;
     private float currentSpeed;
     private bool startDelay;
+    [SerializeField] public AudioSource ThunderAudio;
+    public float fadeTime = 1; // fade time in seconds
 
     void Start()
     {
@@ -161,5 +163,49 @@ public class SimplePlayerController : MonoBehaviour
     public void StopAllSounds()
     {
         audioSource.Stop();
+    }
+
+    public void FadeSound()
+    {
+        if (fadeTime == 0)
+        {
+            ThunderAudio.volume = 0;
+            return;
+        }
+        StartCoroutine("_FadeSound");
+    }
+
+    public void IncreaseSound()
+    {
+        if(fadeTime == 0)
+        {
+            ThunderAudio.volume = 1;
+            return;
+        }
+        StartCoroutine("_IncreaseSound");
+    }
+
+    IEnumerator _FadeSound()
+    {
+        float t = fadeTime;
+        while (t > 0)
+        {
+            yield return null;
+            t -= Time.deltaTime;
+            ThunderAudio.volume = t / fadeTime;
+        }
+        yield break;
+    }
+
+    IEnumerator _IncreaseSound()
+    {
+        float t = 0;
+        while (t < 1)
+        {
+            yield return null;
+            t += Time.deltaTime;
+            ThunderAudio.volume = t / fadeTime;
+        }
+        yield break;
     }
 }

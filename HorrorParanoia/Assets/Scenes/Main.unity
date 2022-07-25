@@ -277,7 +277,7 @@ MonoBehaviour:
   unloaded: 0
   loaded: 0
   PrevSceneName: Level1
-  NextSceneName: Level3
+  NextSceneName: 
 --- !u!1 &813829909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7751911247176655105, guid: 6ca8b56c1e92d234eb8a69e1d7dfb99b, type: 3}
@@ -717,6 +717,10 @@ PrefabInstance:
       propertyPath: walkSpeed
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 7751911247176655107, guid: 6ca8b56c1e92d234eb8a69e1d7dfb99b, type: 3}
+      propertyPath: ThunderAudio
+      value: 
+      objectReference: {fileID: 1442994121}
     - target: {fileID: 7751911247176655116, guid: 6ca8b56c1e92d234eb8a69e1d7dfb99b, type: 3}
       propertyPath: m_Height
       value: 1.7

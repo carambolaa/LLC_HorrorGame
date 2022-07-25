@@ -1643,7 +1643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8458250389792034912, guid: 06aaadc5c07554d41a9e25a19da4c9bf, type: 3}
       propertyPath: speed
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8458250389792034914, guid: 06aaadc5c07554d41a9e25a19da4c9bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13255,7 +13255,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 18
+          m_FloatArgument: 17
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
@@ -13267,7 +13267,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 18
+          m_FloatArgument: 17
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2

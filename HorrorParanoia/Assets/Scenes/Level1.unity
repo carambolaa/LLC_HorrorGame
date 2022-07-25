@@ -4657,7 +4657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5627338448226371163, guid: c89557a8d07a43846ad8f61676d665f9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25
+      value: 25.016
       objectReference: {fileID: 0}
     - target: {fileID: 5627338448226371163, guid: c89557a8d07a43846ad8f61676d665f9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14527,6 +14527,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Painting_M
       objectReference: {fileID: 0}
+    - target: {fileID: 8015217783792354645, guid: 5c76ea132be87af45b4e235ed0313ec7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8015217783792354645, guid: 5c76ea132be87af45b4e235ed0313ec7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c76ea132be87af45b4e235ed0313ec7, type: 3}
 --- !u!1001 &1394485411
@@ -20539,6 +20547,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Painting_N
       objectReference: {fileID: 0}
+    - target: {fileID: 6169357510998962303, guid: 0ef3c7cc61875704ba00c8b2f15b2395, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6833690530204576453, guid: 0ef3c7cc61875704ba00c8b2f15b2395, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -22981,7 +22993,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 47.746483
-  m_Range: 10
+  m_Range: 6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
