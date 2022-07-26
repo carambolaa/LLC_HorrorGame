@@ -30,7 +30,7 @@ public class SimplePlayerController : MonoBehaviour
     private float currentSpeed;
     private bool startDelay;
     [SerializeField] public AudioSource ThunderAudio;
-    public float fadeTime = 1; // fade time in seconds
+    public float fadeTime = 0.6f; // fade time in seconds
 
     void Start()
     {
@@ -200,7 +200,7 @@ public class SimplePlayerController : MonoBehaviour
     IEnumerator _IncreaseSound()
     {
         float t = 0;
-        while (t < 1)
+        while (t < 1f)
         {
             yield return null;
             t += Time.deltaTime;

@@ -71,7 +71,6 @@ public class SimplePlayerUse : MonoBehaviour
                 else
                 {
                     //play lock sound
-                    Debug.Log("doorLocked");
                     go.BroadcastMessage("PlayLockedSound");
                 }
             }
