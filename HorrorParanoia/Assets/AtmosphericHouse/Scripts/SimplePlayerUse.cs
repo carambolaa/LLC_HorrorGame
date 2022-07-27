@@ -12,6 +12,7 @@ public class SimplePlayerUse : MonoBehaviour
     public AudioSource flashLightAudio;
     public KeyCode OpenClose;
     public KeyCode Flashlight;
+    [SerializeField] private bool shouldFlick;
 
     void Start()
     {
@@ -24,22 +25,44 @@ public class SimplePlayerUse : MonoBehaviour
             {
                 RaycastCheck();
             }
+        flashlight.GetComponent<LightFlinker>().SetShouldFlick(shouldFlick);
 
         if (Input.GetKeyDown(Flashlight)) // Toggle flashlight
         {
-            if (flashlight.activeSelf )
+            if (flashlight.activeSelf)
             {
                 flashLightAudio.GetComponent<AudioSource>().PlayOneShot(flashLightOff);
+                if(shouldFlick)
+                {
+                    flashlight.GetComponent<LightFlinker>().Reset();
+                }
                 flashlight.SetActive(false);
             }
             else
             {
                 flashLightAudio.GetComponent<AudioSource>().PlayOneShot(flashLightOn);
+                if(shouldFlick)
+                {
+                    flashlight.GetComponent<LightFlinker>().Reset();
+                }
                 flashlight.SetActive(true);
             }
         }
+        GhostRaycastCheck();
+    }
 
+    void GhostRaycastCheck()
+    {
+        RaycastHit hit;
 
+        if(Physics.Raycast(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward), out hit, 20f))
+        {
+            if(hit.collider.tag == "Ghost")
+            {
+                Debug.Log("found");
+                hit.collider.BroadcastMessage("Triggered");
+            }
+        }
     }
 
     void RaycastCheck()
@@ -83,8 +106,6 @@ public class SimplePlayerUse : MonoBehaviour
         {
          // Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
          //   Debug.Log("Did not Hit");
-
-
         }
 
     }
