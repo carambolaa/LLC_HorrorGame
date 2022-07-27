@@ -4999,6 +4999,7 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 762172578}
   triggeredTime: 0
+  needEyeContact: 0
 --- !u!65 &345577967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5769,6 +5770,7 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 762172578}
   triggeredTime: 0
+  needEyeContact: 0
 --- !u!1001 &430872900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8932,6 +8934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73efc69be2942f54488d744c3cb454c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLooping: 0
 --- !u!82 &686685959
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9411,6 +9414,7 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 762172578}
   triggeredTime: 0
+  needEyeContact: 0
 --- !u!65 &708381619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13694,6 +13698,7 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 762172578}
   triggeredTime: 0
+  needEyeContact: 0
 --- !u!114 &1002694378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24259,6 +24264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73efc69be2942f54488d744c3cb454c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLooping: 0
 --- !u!82 &2065046053
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24677,6 +24683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73efc69be2942f54488d744c3cb454c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLooping: 0
 --- !u!82 &2078994376
 AudioSource:
   m_ObjectHideFlags: 0
