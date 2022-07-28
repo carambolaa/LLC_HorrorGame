@@ -5453,7 +5453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411964348}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 6.5, y: -3, z: 22}
+  m_LocalPosition: {x: 6.5, y: -21, z: 22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1334266675}
@@ -6984,7 +6984,6 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 412546020}
   triggeredTime: 0
-  needEyeContact: 0
 --- !u!1001 &496487137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18980,6 +18979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791f94b65b075b641bb09c77ceb10e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggered: 0
 --- !u!65 &1433063460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19505,7 +19505,6 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 412546020}
   triggeredTime: 0
-  needEyeContact: 0
 --- !u!65 &1512920869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22101,7 +22100,6 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 412546020}
   triggeredTime: 0
-  needEyeContact: 0
 --- !u!65 &1745890954
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24593,7 +24591,6 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 412546020}
   triggeredTime: 0
-  needEyeContact: 0
 --- !u!1 &2050201754
 GameObject:
   m_ObjectHideFlags: 0
@@ -24958,7 +24955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4599913692963517001, guid: 0a2960a7ebf07974eb66d68958b336f4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.26
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4599913692963517001, guid: 0a2960a7ebf07974eb66d68958b336f4, type: 3}
       propertyPath: m_LocalRotation.w

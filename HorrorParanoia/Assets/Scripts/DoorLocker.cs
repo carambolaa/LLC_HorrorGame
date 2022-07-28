@@ -59,9 +59,12 @@ public class DoorLocker : MonoBehaviour
             audioSource.PlayOneShot(openDoor, 1);
             StartCoroutine(ResetCanOpen());
         }
-        else if(transform.localRotation.y < 0)
+        else if(transform.localRotation.y != 0)
         {
-            audioSource.PlayOneShot(closingDoor, 1);
+            if(closingDoor != null)
+            {
+                audioSource.PlayOneShot(closingDoor, 1);
+            }
             StartCoroutine(CloseDoorSound());
         }
         else

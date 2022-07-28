@@ -24,7 +24,7 @@ public class SimplePlayerController : MonoBehaviour
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     public float rotationX = 0;
-    private bool canMove = true;
+    public bool canMove = true;
     private AudioSource audioSource;
     [SerializeField] private AudioClip footStep;
     private float currentSpeed;
@@ -60,7 +60,7 @@ public class SimplePlayerController : MonoBehaviour
             characterController.enabled = false;
             PassingThroughDoors(currentPosition, targetPosition);
         }
-        else
+        else if(!inTransition && canMove)
         {
             startDelay = false;
             characterController.enabled = true;

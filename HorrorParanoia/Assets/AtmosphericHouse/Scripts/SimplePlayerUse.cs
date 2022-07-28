@@ -14,11 +14,6 @@ public class SimplePlayerUse : MonoBehaviour
     public KeyCode Flashlight;
     [SerializeField] private bool shouldFlick;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(OpenClose)) // Open and close action
@@ -91,7 +86,7 @@ public class SimplePlayerUse : MonoBehaviour
                         reference.SetDestination(hit.collider.gameObject.GetComponent<AutoDoorControl>().GetDestination());
                     }
                 }
-                else
+                else if(go.GetComponent<DoorLocker>().GetIsLocked())
                 {
                     //play lock sound
                     go.BroadcastMessage("PlayLockedSound");
@@ -100,6 +95,10 @@ public class SimplePlayerUse : MonoBehaviour
             else
             {
 
+            }
+            if(hit.collider.gameObject.GetComponent<TriggerEvents>())
+            {
+                hit.collider.gameObject.GetComponent<TriggerEvents>().Triggered();
             }
         }
         else
@@ -110,4 +109,9 @@ public class SimplePlayerUse : MonoBehaviour
 
     }
 
+
+    public void SetShouldFlick(bool bo)
+    {
+        shouldFlick = bo;
+    }
 }
