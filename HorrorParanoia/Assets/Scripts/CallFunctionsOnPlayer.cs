@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CallFunctionsOnPlayer : MonoBehaviour
 {
+    [SerializeField] private bool triggered;
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && triggered == false)
         {
             if(other.GetComponent<SimplePlayerController>().ThunderAudio.volume > 0)
             {
@@ -16,7 +18,7 @@ public class CallFunctionsOnPlayer : MonoBehaviour
             {
                 other.GetComponent<SimplePlayerController>().IncreaseSound();
             }
-            Destroy(gameObject);
+            triggered = true;
         }
     }
 }

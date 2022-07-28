@@ -4356,6 +4356,7 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 1653364336}
   triggeredTime: 0
+  needEyeContact: 0
 --- !u!4 &401267841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5410589877304684638, guid: d2f36f893599ad64fb3637c9297b7aba, type: 3}
@@ -8218,6 +8219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8187aac097c21408daa2461f91fe47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlickering: 0
+  timeDelay: 0
 --- !u!65 &682225057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12329,6 +12332,7 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 1653364336}
   triggeredTime: 0
+  needEyeContact: 0
 --- !u!4 &1078075601 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1866134700048483640, guid: edb4af38e35c0fe48a459b982936c920, type: 3}
@@ -13280,6 +13284,7 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 1653364336}
   triggeredTime: 0
+  needEyeContact: 0
 --- !u!4 &1131859263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4424113170630868750, guid: 32d3d17516a34824f94256fd1a96b1d1, type: 3}
@@ -17880,6 +17885,7 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 1653364336}
   triggeredTime: 0
+  needEyeContact: 0
 --- !u!1 &1464578639
 GameObject:
   m_ObjectHideFlags: 0
@@ -18901,6 +18907,7 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 1653364336}
   triggeredTime: 0
+  needEyeContact: 0
 --- !u!4 &1585515085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3137613638993867373, guid: 1eb363e114a269a4694f58fc48a18cfe, type: 3}
@@ -24917,7 +24924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4599913692963517001, guid: 0a2960a7ebf07974eb66d68958b336f4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.26
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4599913692963517001, guid: 0a2960a7ebf07974eb66d68958b336f4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25077,6 +25084,7 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 1653364336}
   triggeredTime: 0
+  needEyeContact: 0
 --- !u!1001 &2080981774
 PrefabInstance:
   m_ObjectHideFlags: 0

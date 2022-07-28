@@ -53,7 +53,6 @@ public class LoadLevel : MonoBehaviour
     {
         if (NextSceneName != string.Empty)
         {
-            Debug.Log("LoadNext");
             SceneManager.LoadSceneAsync(NextSceneName, LoadSceneMode.Additive);
         }
     }
@@ -62,7 +61,6 @@ public class LoadLevel : MonoBehaviour
     {
         if (PrevSceneName != string.Empty)
         {
-            Debug.Log("UnLoadPrev");
             SceneManager.UnloadSceneAsync(PrevSceneName);
         }
     }

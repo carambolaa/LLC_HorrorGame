@@ -89,7 +89,7 @@ Material:
     - _DstBlend: 10
     - _EnableBlendModePreserveSpecularLighting: 0
     - _EnableFogOnTransparent: 1
-    - _Glossiness: 0
+    - _Glossiness: 1
     - _Metallic: 0
     - _OpacityThreshold: 0
     - _OpaqueCullMode: 2

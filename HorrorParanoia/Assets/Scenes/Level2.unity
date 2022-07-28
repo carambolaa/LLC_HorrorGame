@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 1bed44fcff63c6543b72356be4550f83, type: 2}
 --- !u!1001 &2405287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4999,7 +4999,6 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 762172578}
   triggeredTime: 0
-  needEyeContact: 0
 --- !u!65 &345577967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5770,7 +5769,6 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 762172578}
   triggeredTime: 0
-  needEyeContact: 0
 --- !u!1001 &430872900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9414,7 +9412,6 @@ MonoBehaviour:
       m_Calls: []
   Level: {fileID: 762172578}
   triggeredTime: 0
-  needEyeContact: 0
 --- !u!65 &708381619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9964,7 +9961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4599913692963517001, guid: 0a2960a7ebf07974eb66d68958b336f4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.26
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4599913692963517001, guid: 0a2960a7ebf07974eb66d68958b336f4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13675,30 +13672,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 506415253627465992, guid: e7f9b0b1411a6f44489ca8acdbf24ddd, type: 3}
   m_PrefabInstance: {fileID: 1002694373}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1002694377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002694376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6af1647676d8bdd45932083eaf744ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerTarget1:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerTarget2:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerTarget3:
-    m_PersistentCalls:
-      m_Calls: []
-  Level: {fileID: 762172578}
-  triggeredTime: 0
-  needEyeContact: 0
 --- !u!114 &1002694378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15803,6 +15776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791f94b65b075b641bb09c77ceb10e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggered: 0
 --- !u!1001 &1159926370
 PrefabInstance:
   m_ObjectHideFlags: 0

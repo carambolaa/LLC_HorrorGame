@@ -10,7 +10,6 @@ public class TriggerEvents: MonoBehaviour
     [SerializeField] private UnityEvent triggerTarget3;
     [SerializeField] private Transform Level;
     [SerializeField] private int triggeredTime = 0;
-    [SerializeField] private bool needEyeContact;
 
     private void OnTriggerEnter(Collider other)
     {
