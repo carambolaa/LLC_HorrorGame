@@ -9,16 +9,16 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: HandsAndFeetSheet
   m_Shader: {fileID: 4800000, guid: 3abc2696835a57e47a3fb05babf7e908, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _ALPHATEST_ON _BLENDMODE_ALPHA _SURFACE_TYPE_TRANSPARENT
+  m_ShaderKeywords: _ADD_PRECOMPUTED_VELOCITY _ALPHAPREMULTIPLY_ON _ALPHATEST_ON
+    _BLENDMODE_ALPHA _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 3400
   stringTagMap:
     MotionVector: User
     RenderType: Transparent
   disabledShaderPasses:
-  - MOTIONVECTORS
   - TransparentBackface
   m_SavedProperties:
     serializedVersion: 3
@@ -84,10 +84,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AddPrecomputedVelocity: 1
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 1
     - _AlphaDstBlend: 10
-    - _AlphaSrcBlend: 1
+    - _AlphaSrcBlend: 0
     - _Bias: 0.417
     - _BlendMode: 0
     - _BumpScale: 1
@@ -102,7 +103,8 @@ Material:
     - _DriedBlood_Metallic: 0.275
     - _DriedOpacityLevel: 3.87
     - _DstBlend: 10
-    - _Gloss: 0.991
+    - _EnableFogOnTransparent: 1
+    - _Gloss: 0.262
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -120,20 +122,21 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StencilRef: 2
+    - _StencilRef: 0
     - _StencilRefDepth: 0
-    - _StencilRefDistortionVec: 64
+    - _StencilRefDistortionVec: 4
     - _StencilRefGBuffer: 2
-    - _StencilRefMV: 128
-    - _StencilWriteMask: 3
-    - _StencilWriteMaskDepth: 48
-    - _StencilWriteMaskDistortionVec: 64
-    - _StencilWriteMaskGBuffer: 51
-    - _StencilWriteMaskMV: 176
+    - _StencilRefMV: 32
+    - _StencilWriteMask: 6
+    - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDistortionVec: 4
+    - _StencilWriteMaskGBuffer: 14
+    - _StencilWriteMaskMV: 40
     - _SurfaceType: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentSortPriority: 0
+    - _TransparentZWrite: 0
     - _TrasparencyPower: 0.308
     - _UVSec: 0
     - _UseShadowThreshold: 0
@@ -148,3 +151,4 @@ Material:
     - _DriedBloodColorGloss: {r: 0.2924528, g: 0.14116415, b: 0.05380029, a: 0.94509804}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _MainColorTintFadeA: {r: 0.13207549, g: 0.005606976, b: 0.011610267, a: 1}
+  m_BuildTextureStacks: []
