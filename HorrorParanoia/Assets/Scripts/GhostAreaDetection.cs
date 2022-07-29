@@ -7,6 +7,7 @@ public class GhostAreaDetection : MonoBehaviour
     private Transform player;
     [SerializeField] private float detectRange;
     [SerializeField] private float triggerRange;
+    private int audioPlayedTime = 0;
 
     private void Start()
     {
@@ -26,9 +27,19 @@ public class GhostAreaDetection : MonoBehaviour
                 }
                 else
                 {
+                    PlayOnce();
                     player.GetComponent<SimplePlayerUse>().SetShouldFlick(true);
                 }
             }
+        }
+    }
+
+    private void PlayOnce()
+    {
+        if(audioPlayedTime == 0)
+        {
+            GetComponent<AudioSource>().Play();
+            audioPlayedTime++;
         }
     }
 }

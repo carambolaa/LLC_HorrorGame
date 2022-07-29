@@ -8,6 +8,8 @@ public class GhostHunt : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform player;
     [SerializeField] private bool shouldChase;
+    [SerializeField] private AudioSource footSteps;
+    [SerializeField] private AudioSource chaseBGM;
 
     private void Start()
     {
@@ -20,6 +22,19 @@ public class GhostHunt : MonoBehaviour
         if (shouldChase)
         {
             ChasePlayer();
+            if(!footSteps.isPlaying)
+            {
+                footSteps.Play();
+            }
+            if(!chaseBGM.isPlaying)
+            {
+                chaseBGM.Play();
+            }
+        }
+        else
+        {
+            chaseBGM.Stop();
+            footSteps.Stop();
         }
     }
 

@@ -11,6 +11,8 @@ public class FollowAI : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Transform resetPoint;
     [SerializeField] private GameObject Painting;
+    [SerializeField] private AudioSource jumpScare;
+
     private bool isOn;
 
     private void Start()
@@ -56,6 +58,10 @@ public class FollowAI : MonoBehaviour
         isOn = true;
         if(Vector3.Distance(player.transform.position, transform.position) < 1.5f)
         {
+            if(!jumpScare.isPlaying)
+            {
+                jumpScare.Play();
+            }
             player.GetComponent<SimplePlayerController>().canMove = false;
             player.GetComponent<CharacterController>().enabled = false;
             player.GetComponent<SimplePlayerUse>().SetShouldFlick(true);
