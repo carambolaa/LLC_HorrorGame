@@ -1800,7 +1800,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f82ef95d6c479a14f9abaff6e69551f3, type: 2}
+  - {fileID: 2100000, guid: f00ec954ae55db345bb32e9599619a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2524,6 +2524,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1759977218}
     m_Modifications:
+    - target: {fileID: 5267862011365916371, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f00ec954ae55db345bb32e9599619a05, type: 2}
     - target: {fileID: 5916543429937127174, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
       propertyPath: m_Name
       value: Lamp_wall_shade (2)
@@ -2604,6 +2608,10 @@ PrefabInstance:
       propertyPath: m_BoundingSphereOverride.z
       value: 2.4e-44
       objectReference: {fileID: 0}
+    - target: {fileID: 6834952642697680769, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6834952642697680771, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
       propertyPath: m_Version
       value: 11
@@ -2627,7 +2635,7 @@ PrefabInstance:
     - target: {fileID: 9186767124814575479, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f82ef95d6c479a14f9abaff6e69551f3, type: 2}
+      objectReference: {fileID: 2100000, guid: f00ec954ae55db345bb32e9599619a05, type: 2}
     m_RemovedComponents:
     - {fileID: 3767153776854779449, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
     - {fileID: 6834952642697680771, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
@@ -3930,7 +3938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &382956836
 Transform:
   m_ObjectHideFlags: 0
@@ -6735,6 +6743,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1759977218}
     m_Modifications:
+    - target: {fileID: 5267862011365916371, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f00ec954ae55db345bb32e9599619a05, type: 2}
     - target: {fileID: 5916543429937127174, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
       propertyPath: m_Name
       value: Lamp_wall_shade
@@ -6815,6 +6827,10 @@ PrefabInstance:
       propertyPath: m_BoundingSphereOverride.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6834952642697680769, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6834952642697680771, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
       propertyPath: m_Version
       value: 11
@@ -6838,7 +6854,7 @@ PrefabInstance:
     - target: {fileID: 9186767124814575479, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f82ef95d6c479a14f9abaff6e69551f3, type: 2}
+      objectReference: {fileID: 2100000, guid: f00ec954ae55db345bb32e9599619a05, type: 2}
     m_RemovedComponents:
     - {fileID: 3767153776854779449, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
     - {fileID: 6834952642697680771, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
@@ -7651,7 +7667,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f82ef95d6c479a14f9abaff6e69551f3, type: 2}
+  - {fileID: 2100000, guid: f00ec954ae55db345bb32e9599619a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8553,7 +8569,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 140029972682ed14f9ac6bd62e290260, type: 2}
+  - {fileID: 2100000, guid: f00ec954ae55db345bb32e9599619a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10728,6 +10744,10 @@ PrefabInstance:
       value: Lamp_table_shade
       objectReference: {fileID: 0}
     - target: {fileID: 8394160719242617691, guid: 0a6f92c2d2fc79a43a27bb5c44b8aae3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700784480135257001, guid: 0a6f92c2d2fc79a43a27bb5c44b8aae3, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -14002,7 +14022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236745359}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.92, y: -0.19999993, z: 25.2}
+  m_LocalPosition: {x: 2.92, y: -0.338, z: 25.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1875193960}
@@ -17457,7 +17477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1525860104
 Transform:
   m_ObjectHideFlags: 0
@@ -18368,6 +18388,10 @@ PrefabInstance:
     - target: {fileID: 6037955101925369545, guid: e5b5f8b8fe4c3504cbadbc131b58b68e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932848746851399964, guid: e5b5f8b8fe4c3504cbadbc131b58b68e, type: 3}
+      propertyPath: objectOpen
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7378142429236673873, guid: e5b5f8b8fe4c3504cbadbc131b58b68e, type: 3}
       propertyPath: m_Name
@@ -20853,7 +20877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744109538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4693737, y: -1.48, z: 27.442364}
+  m_LocalPosition: {x: 4.4693737, y: -1.4799995, z: 27.442364}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258604235}
@@ -23445,6 +23469,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1759977218}
     m_Modifications:
+    - target: {fileID: 5267862011365916371, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f00ec954ae55db345bb32e9599619a05, type: 2}
     - target: {fileID: 5916543429937127174, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
       propertyPath: m_Name
       value: Lamp_wall_shade (1)
@@ -23525,6 +23553,10 @@ PrefabInstance:
       propertyPath: m_BoundingSphereOverride.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6834952642697680769, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6834952642697680771, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
       propertyPath: m_Version
       value: 11
@@ -23548,7 +23580,7 @@ PrefabInstance:
     - target: {fileID: 9186767124814575479, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f82ef95d6c479a14f9abaff6e69551f3, type: 2}
+      objectReference: {fileID: 2100000, guid: f00ec954ae55db345bb32e9599619a05, type: 2}
     m_RemovedComponents:
     - {fileID: 3767153776854779449, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
     - {fileID: 6834952642697680771, guid: f8127478f2e0bb04080b9599311d4457, type: 3}
