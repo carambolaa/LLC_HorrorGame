@@ -10,6 +10,7 @@ public class FollowAI : MonoBehaviour
     [SerializeField] private Transform InitialPoint;
     [SerializeField] private GameObject player;
     [SerializeField] private Transform resetPoint;
+    [SerializeField] private GameObject Painting;
     private bool isOn;
 
     private void Start()
@@ -42,6 +43,7 @@ public class FollowAI : MonoBehaviour
         Ghost.transform.position = InitialPoint.position;
         Ghost.transform.rotation = InitialPoint.rotation;
         Ghost.SetActive(false);
+        Painting.SetActive(true);
     }
 
     public void SetIsActive(bool bo)
@@ -72,9 +74,9 @@ public class FollowAI : MonoBehaviour
             Ghost.transform.position = cur;
             Ghost.transform.rotation = gameObject.transform.rotation;
             Ghost.SetActive(true);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(.5f);
             Ghost.SetActive(false);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(.5f);
         }
         isOn = false;
     }

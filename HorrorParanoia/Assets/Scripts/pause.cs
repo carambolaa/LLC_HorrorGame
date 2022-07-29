@@ -14,12 +14,10 @@ public class pause : MonoBehaviour
             if (GameIsPause)
             {
                 Resume();
-                Cursor.lockState = CursorLockMode.Locked;
             }
             else 
             {
                 Pause();
-                Cursor.lockState = CursorLockMode.None;
             }
         }
 
@@ -29,11 +27,20 @@ public class pause : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPause = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     void Pause()
     {
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPause = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

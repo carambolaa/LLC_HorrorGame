@@ -25107,7 +25107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canOpen: 1
-  isLocked: 1
+  isLocked: 0
   audioSource: {fileID: 937495849}
   openDoor: {fileID: 8300000, guid: a08e2eb014cd40048bf30cbf8e90187a, type: 3}
   closeDoor: {fileID: 8300000, guid: 3ea2d32f7980481449b240ced9215394, type: 3}

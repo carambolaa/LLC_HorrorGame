@@ -13,6 +13,7 @@ public class SimplePlayerUse : MonoBehaviour
     public KeyCode OpenClose;
     public KeyCode Flashlight;
     [SerializeField] private bool shouldFlick;
+    public bool haveHalf;
 
     void Update()
     {
@@ -99,6 +100,14 @@ public class SimplePlayerUse : MonoBehaviour
             if(hit.collider.gameObject.GetComponent<TriggerEvents>())
             {
                 hit.collider.gameObject.GetComponent<TriggerEvents>().Triggered();
+            }
+            if(hit.collider.gameObject.GetComponent<Level10PaintingTrigger>())
+            {
+                hit.collider.gameObject.GetComponent<Level10PaintingTrigger>().StartHunting();
+            }
+            if(hit.collider.gameObject.GetComponent<FinishHunting>() && haveHalf)
+            {
+                hit.collider.gameObject.GetComponent<FinishHunting>().StopHunting();
             }
         }
         else
