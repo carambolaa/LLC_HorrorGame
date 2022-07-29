@@ -1653,6 +1653,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8458250389792034915, guid: 06aaadc5c07554d41a9e25a19da4c9bf, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
     - target: {fileID: 8458250389792034917, guid: 06aaadc5c07554d41a9e25a19da4c9bf, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3068,7 +3072,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114649932291900122, guid: b2d0234fd4b37de40a29b6af4b51c37b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b2d0234fd4b37de40a29b6af4b51c37b, type: 3}
 --- !u!4 &253894817 stripped
 Transform:
@@ -4005,7 +4010,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114823327961881256, guid: 0bb141638beb54240af390ee4681e416, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0bb141638beb54240af390ee4681e416, type: 3}
 --- !u!4 &331751219 stripped
 Transform:
@@ -4381,7 +4387,7 @@ AudioSource:
   m_GameObject: {fileID: 378314203}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -5709,7 +5715,7 @@ AudioSource:
   m_GameObject: {fileID: 461752497}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2c4db27672f87b54eb5e4cd500935745, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -6725,7 +6731,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114289135856571000, guid: 2f435bfb7dea07b4ea32f209e8640857, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2f435bfb7dea07b4ea32f209e8640857, type: 3}
 --- !u!4 &528182676 stripped
 Transform:
@@ -9034,7 +9041,7 @@ AudioSource:
   m_GameObject: {fileID: 728835285}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -14260,7 +14267,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114895936414094306, guid: 8333c542768bedb4888c41d4d49a0814, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8333c542768bedb4888c41d4d49a0814, type: 3}
 --- !u!4 &1162185076 stripped
 Transform:
@@ -14713,7 +14721,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114091667472498126, guid: 0f82a124673e2484db523ce05af9b3e7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0f82a124673e2484db523ce05af9b3e7, type: 3}
 --- !u!4 &1214024300 stripped
 Transform:
@@ -15188,7 +15197,7 @@ AudioSource:
   m_GameObject: {fileID: 1225483673}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 8300000, guid: c1f72d457e8e0eb43b3661ec625bfde1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -15399,7 +15408,7 @@ AudioSource:
   m_GameObject: {fileID: 1226239059}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -16402,7 +16411,7 @@ AudioSource:
   m_GameObject: {fileID: 1293585130}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 8300000, guid: c1f72d457e8e0eb43b3661ec625bfde1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -16981,7 +16990,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114314131117385100, guid: 5c056598a85b4f44ca973f0fff2efb06, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5c056598a85b4f44ca973f0fff2efb06, type: 3}
 --- !u!4 &1323634613 stripped
 Transform:
@@ -17043,7 +17053,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114925733519667106, guid: 01e94e8e59b2b26469097aa7dfaa0bf2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 01e94e8e59b2b26469097aa7dfaa0bf2, type: 3}
 --- !u!4 &1323789217 stripped
 Transform:
@@ -24361,7 +24372,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114065471215760046, guid: 103d144fea2f60642adb92f728d7b926, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 103d144fea2f60642adb92f728d7b926, type: 3}
 --- !u!4 &1965590193 stripped
 Transform:

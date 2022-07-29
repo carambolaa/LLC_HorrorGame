@@ -7240,7 +7240,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114091667472498126, guid: 0f82a124673e2484db523ce05af9b3e7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0f82a124673e2484db523ce05af9b3e7, type: 3}
 --- !u!4 &504763512 stripped
 Transform:
@@ -9415,7 +9416,7 @@ AudioSource:
   m_GameObject: {fileID: 701101293}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -9545,7 +9546,7 @@ AudioSource:
   m_GameObject: {fileID: 702091842}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4d920acfc9161d048b27ce55c4796c85, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -14327,7 +14328,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114173450100104620, guid: fe348eeb755b6374ea109e5512387c6b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fe348eeb755b6374ea109e5512387c6b, type: 3}
 --- !u!4 &1107951390 stripped
 Transform:
@@ -17235,7 +17237,7 @@ AudioSource:
   m_GameObject: {fileID: 1344700370}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -19032,7 +19034,7 @@ AudioSource:
   m_GameObject: {fileID: 1521994333}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2c4db27672f87b54eb5e4cd500935745, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

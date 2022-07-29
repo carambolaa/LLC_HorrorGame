@@ -2327,7 +2327,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114941564134762298, guid: 0a76d0ff7383f774e8e77ff5b9911a13, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0a76d0ff7383f774e8e77ff5b9911a13, type: 3}
 --- !u!4 &143250074 stripped
 Transform:
@@ -2905,7 +2906,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114989314263087140, guid: 1d12d240bf8766147baa15dd32298cc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1d12d240bf8766147baa15dd32298cc4, type: 3}
 --- !u!4 &195212217 stripped
 Transform:
@@ -4465,7 +4467,7 @@ AudioSource:
   m_GameObject: {fileID: 325397234}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -6054,7 +6056,7 @@ AudioSource:
   m_GameObject: {fileID: 460336608}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -6731,7 +6733,7 @@ AudioSource:
   m_GameObject: {fileID: 474741945}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 03e8f58755e8daf4f9c7983abe96546e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.8
@@ -7198,7 +7200,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114185129228443310, guid: c1531cc37ebae094e94e56279d80cf6d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c1531cc37ebae094e94e56279d80cf6d, type: 3}
 --- !u!4 &496487138 stripped
 Transform:
@@ -7443,7 +7446,7 @@ AudioSource:
   m_GameObject: {fileID: 512809931}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 8300000, guid: c1f72d457e8e0eb43b3661ec625bfde1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -9665,7 +9668,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -44.368
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114900530087542618, guid: ee836e6cf2bf20a4598f798ebf2824a1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ee836e6cf2bf20a4598f798ebf2824a1, type: 3}
 --- !u!4 &678289534 stripped
 Transform:
@@ -10153,7 +10157,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114716376449382202, guid: 68c0d32a87ae645428cd5bb39b52336c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68c0d32a87ae645428cd5bb39b52336c, type: 3}
 --- !u!4 &731759502 stripped
 Transform:
@@ -12127,7 +12132,7 @@ AudioSource:
   m_GameObject: {fileID: 897809965}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -12664,7 +12669,7 @@ AudioSource:
   m_GameObject: {fileID: 937495848}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -25838,7 +25843,7 @@ AudioSource:
   m_GameObject: {fileID: 2080195971}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f34a1e09c7675ab46a8ed820bceb38d9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 764ca921cce72c44f8f4dc9dd2137bf7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.8

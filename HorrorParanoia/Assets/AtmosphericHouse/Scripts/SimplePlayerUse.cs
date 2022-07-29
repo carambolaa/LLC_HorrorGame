@@ -109,6 +109,10 @@ public class SimplePlayerUse : MonoBehaviour
             {
                 hit.collider.gameObject.GetComponent<FinishHunting>().StopHunting();
             }
+            if(hit.collider.gameObject.GetComponent<LoadFinishScene>())
+            {
+                hit.collider.gameObject.GetComponent<LoadFinishScene>().LoadLastScene();
+            }
         }
         else
         {
