@@ -21,8 +21,11 @@ public class LoadLevel : MonoBehaviour
         {
             loaded = false;
         }
+    }
 
-        if(SceneManager.GetSceneByName(PrevSceneName).isLoaded)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (SceneManager.GetSceneByName(PrevSceneName).isLoaded)
         {
             unloaded = false;
         }
@@ -30,10 +33,7 @@ public class LoadLevel : MonoBehaviour
         {
             unloaded = true;
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
         if (other.CompareTag("Player"))
         {
             if (!unloaded)
@@ -53,7 +53,6 @@ public class LoadLevel : MonoBehaviour
     {
         if (NextSceneName != string.Empty)
         {
-            Debug.Log("LoadNext");
             SceneManager.LoadSceneAsync(NextSceneName, LoadSceneMode.Additive);
         }
     }
@@ -62,7 +61,6 @@ public class LoadLevel : MonoBehaviour
     {
         if (PrevSceneName != string.Empty)
         {
-            Debug.Log("UnLoadPrev");
             SceneManager.UnloadSceneAsync(PrevSceneName);
         }
     }

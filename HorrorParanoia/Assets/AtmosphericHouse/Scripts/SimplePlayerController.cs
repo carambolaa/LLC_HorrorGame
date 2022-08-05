@@ -24,11 +24,13 @@ public class SimplePlayerController : MonoBehaviour
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     public float rotationX = 0;
-    private bool canMove = true;
+    public bool canMove = true;
     private AudioSource audioSource;
     [SerializeField] private AudioClip footStep;
     private float currentSpeed;
     private bool startDelay;
+    [SerializeField] public AudioSource ThunderAudio;
+    public float fadeTime = 0.6f; // fade time in seconds
 
     void Start()
     {
@@ -58,7 +60,7 @@ public class SimplePlayerController : MonoBehaviour
             characterController.enabled = false;
             PassingThroughDoors(currentPosition, targetPosition);
         }
-        else
+        else if(!inTransition && canMove)
         {
             startDelay = false;
             characterController.enabled = true;
@@ -127,7 +129,7 @@ public class SimplePlayerController : MonoBehaviour
         }
         transform.position = Vector3.Lerp(currentPosition, targetPosition, time);
         playerCamera.transform.localRotation = Quaternion.Lerp(playerCameraRotation, Quaternion.Euler(0,0,0), time);
-        transform.rotation = Quaternion.Lerp(currentRotation, Quaternion.Euler(0, 180, 0), time);
+        transform.rotation = Quaternion.Lerp(currentRotation,targetRotation, time);
         time += Time.deltaTime / 2.5f;
     }
 
@@ -136,22 +138,23 @@ public class SimplePlayerController : MonoBehaviour
         currentDoor = GO;
     }
 
-    public void SetDestination(Vector3 destination)
+    public void SetDestination(Transform destination)
     {
         time = 0;
-        targetPosition = destination;
+        targetPosition = destination.position;
         targetPosition.y = transform.position.y;
+        targetRotation = destination.rotation;
     }
 
     private void PlayFootSteps()
     {
         var velocity = characterController.velocity;
         velocity.y = 0;
-        if(velocity != Vector3.zero && !audioSource.isPlaying)
+        if(velocity != Vector3.zero && !audioSource.isPlaying && !inTransition)
         {
             audioSource.PlayOneShot(footStep);
         }
-        else if(characterController.velocity == Vector3.zero)
+        else if(characterController.velocity == Vector3.zero || inTransition)
         {
             audioSource.Stop();
         }
@@ -160,5 +163,49 @@ public class SimplePlayerController : MonoBehaviour
     public void StopAllSounds()
     {
         audioSource.Stop();
+    }
+
+    public void FadeSound()
+    {
+        if (fadeTime == 0)
+        {
+            ThunderAudio.volume = 0;
+            return;
+        }
+        StartCoroutine("_FadeSound");
+    }
+
+    public void IncreaseSound()
+    {
+        if(fadeTime == 0)
+        {
+            ThunderAudio.volume = 1;
+            return;
+        }
+        StartCoroutine("_IncreaseSound");
+    }
+
+    IEnumerator _FadeSound()
+    {
+        float t = fadeTime;
+        while (t > 0)
+        {
+            yield return null;
+            t -= Time.deltaTime;
+            ThunderAudio.volume = t / fadeTime;
+        }
+        yield break;
+    }
+
+    IEnumerator _IncreaseSound()
+    {
+        float t = 0;
+        while (t < 1f)
+        {
+            yield return null;
+            t += Time.deltaTime;
+            ThunderAudio.volume = t / fadeTime;
+        }
+        yield break;
     }
 }

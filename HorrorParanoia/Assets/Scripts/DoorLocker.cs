@@ -27,6 +27,11 @@ public class DoorLocker : MonoBehaviour
         isLocked = bo;
     }
 
+    public void UnlockDoor()
+    {
+        isLocked = false;
+    }
+
     public bool GetIsLocked()
     {
         return isLocked;
@@ -40,6 +45,11 @@ public class DoorLocker : MonoBehaviour
         }
     }
 
+    public void DebugString(string st)
+    {
+        Debug.Log(st);
+    }
+
     public void PlaySFX()
     {
         //Debug.Log(transform.localRotation.y);
@@ -49,9 +59,12 @@ public class DoorLocker : MonoBehaviour
             audioSource.PlayOneShot(openDoor, 1);
             StartCoroutine(ResetCanOpen());
         }
-        else if(transform.localRotation.y < 0)
+        else if(transform.localRotation.y != 0)
         {
-            audioSource.PlayOneShot(closingDoor, 1);
+            if(closingDoor != null)
+            {
+                audioSource.PlayOneShot(closingDoor, 1);
+            }
             StartCoroutine(CloseDoorSound());
         }
         else
@@ -71,5 +84,10 @@ public class DoorLocker : MonoBehaviour
     {
         yield return new WaitForSeconds(1.9f);
         canOpen = true;
+    }
+
+    public void UnlockDoorAfterSecs(float delay)
+    {
+        Invoke("UnlockDoor", delay);
     }
 }

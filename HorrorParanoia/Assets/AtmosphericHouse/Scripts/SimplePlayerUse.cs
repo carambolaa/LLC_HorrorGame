@@ -12,11 +12,8 @@ public class SimplePlayerUse : MonoBehaviour
     public AudioSource flashLightAudio;
     public KeyCode OpenClose;
     public KeyCode Flashlight;
-
-    void Start()
-    {
-
-    }
+    [SerializeField] private bool shouldFlick;
+    public bool haveHalf;
 
     void Update()
     {
@@ -24,22 +21,44 @@ public class SimplePlayerUse : MonoBehaviour
             {
                 RaycastCheck();
             }
+        flashlight.GetComponent<LightFlinker>().SetShouldFlick(shouldFlick);
 
         if (Input.GetKeyDown(Flashlight)) // Toggle flashlight
         {
-            if (flashlight.activeSelf )
+            if (flashlight.activeSelf)
             {
                 flashLightAudio.GetComponent<AudioSource>().PlayOneShot(flashLightOff);
+                if(shouldFlick)
+                {
+                    flashlight.GetComponent<LightFlinker>().Reset();
+                }
                 flashlight.SetActive(false);
             }
             else
             {
                 flashLightAudio.GetComponent<AudioSource>().PlayOneShot(flashLightOn);
+                if(shouldFlick)
+                {
+                    flashlight.GetComponent<LightFlinker>().Reset();
+                }
                 flashlight.SetActive(true);
             }
         }
+        GhostRaycastCheck();
+    }
 
+    void GhostRaycastCheck()
+    {
+        RaycastHit hit;
 
+        if(Physics.Raycast(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward), out hit, 20f))
+        {
+            if(hit.collider.tag == "Ghost")
+            {
+                Debug.Log("found");
+                hit.collider.BroadcastMessage("Triggered");
+            }
+        }
     }
 
     void RaycastCheck()
@@ -51,6 +70,10 @@ public class SimplePlayerUse : MonoBehaviour
             if (hit.collider.gameObject.GetComponent<DoorLocker>())
             {
                 var go = hit.collider.gameObject;
+                if(go.GetComponent<TriggerEvents>())
+                {
+                    go.BroadcastMessage("Triggered");
+                }
                 if(go.GetComponent<DoorLocker>().GetCanOpen() && !go.GetComponent<DoorLocker>().GetIsLocked())
                 {
                     go.BroadcastMessage("PlaySFX");
@@ -58,17 +81,15 @@ public class SimplePlayerUse : MonoBehaviour
                     if (go.GetComponent<AutoDoorControl>())
                     {
                         var reference = transform.GetComponent<SimplePlayerController>();
+                        reference.SetCurrentDoor(hit.collider.gameObject);
                         reference.GetCurrentPosition();
                         reference.SetTransitState(true);
                         reference.SetDestination(hit.collider.gameObject.GetComponent<AutoDoorControl>().GetDestination());
-                        reference.SetCurrentDoor(hit.collider.gameObject);
-                        reference.StopAllSounds();
                     }
                 }
-                else
+                else if(go.GetComponent<DoorLocker>().GetIsLocked())
                 {
                     //play lock sound
-                    Debug.Log("doorLocked");
                     go.BroadcastMessage("PlayLockedSound");
                 }
             }
@@ -76,15 +97,34 @@ public class SimplePlayerUse : MonoBehaviour
             {
 
             }
+            if(hit.collider.gameObject.GetComponent<TriggerEvents>())
+            {
+                hit.collider.gameObject.GetComponent<TriggerEvents>().Triggered();
+            }
+            if(hit.collider.gameObject.GetComponent<Level10PaintingTrigger>())
+            {
+                hit.collider.gameObject.GetComponent<Level10PaintingTrigger>().StartHunting();
+            }
+            if(hit.collider.gameObject.GetComponent<FinishHunting>() && haveHalf)
+            {
+                hit.collider.gameObject.GetComponent<FinishHunting>().StopHunting();
+            }
+            if(hit.collider.gameObject.GetComponent<LoadFinishScene>())
+            {
+                hit.collider.gameObject.GetComponent<LoadFinishScene>().LoadLastScene();
+            }
         }
         else
         {
          // Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
          //   Debug.Log("Did not Hit");
-
-
         }
 
     }
 
+
+    public void SetShouldFlick(bool bo)
+    {
+        shouldFlick = bo;
+    }
 }
